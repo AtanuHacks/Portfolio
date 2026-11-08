@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import BackgroundEffects from "../components/BackgroundEffects";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -14,7 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name | Portfolio",
+  title: "Atanu Bose | Portfolio",
+   icons: {
+    icon: "../icon.png",
+  },
   description:
     "Personal portfolio showcasing my skills, projects, experience, and journey in software development.",
   keywords: [
@@ -24,6 +27,7 @@ export const metadata: Metadata = {
     "Software Engineering",
     "Machine Learning",
   ],
+ 
 };
 
 export default function RootLayout({
@@ -36,8 +40,12 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-screen flex flex-col">
-        {children}
+      
+      <body className="min-h-full flex flex-col">
+        <BackgroundEffects/>
+        <div className="relative z-10 min-h-screen">
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -144,3 +144,174 @@ body::before {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Dedicated navbar glass effect */
+.navbar-glass {
+  background: rgba(7, 12, 27, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  backdrop-filter: blur(28px) saturate(150%);
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(56, 189, 248, 0.04);
+}
+
+
+/* Global futuristic background */
+html,
+body {
+  min-height: 100%;
+  background: #050816;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Fixed background layer */
+.global-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #050816;
+}
+
+/* Ambient colored glows */
+.ambient-glow {
+  position: absolute;
+  width: 38rem;
+  height: 38rem;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.13;
+  animation: glow-drift 18s ease-in-out infinite alternate;
+}
+
+.glow-cyan {
+  top: 5%;
+  left: -15%;
+  background: #00c8ff;
+}
+
+.glow-purple {
+  top: 15%;
+  right: -15%;
+  background: #8b5cf6;
+  animation-delay: -6s;
+}
+
+.glow-blue {
+  bottom: -35%;
+  left: 35%;
+  background: #2563eb;
+  opacity: 0.11;
+  animation-delay: -10s;
+}
+
+/* Subtle technical grid */
+.background-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(rgba(100, 160, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 160, 255, 0.07) 1px, transparent 1px);
+  background-size: 65px 65px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+/* Floating particles */
+.background-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow: 0 0 12px #22d3ee;
+  opacity: 0.45;
+  animation: particle-float 7s ease-in-out infinite;
+}
+
+/* Decorative programming symbols */
+.code-symbol {
+  position: absolute;
+  color: #60a5fa;
+  font-family: monospace;
+  font-weight: 700;
+  opacity: 0.16;
+  user-select: none;
+  animation: symbol-float 2s ease-in-out infinite;
+}
+
+.symbol-one {
+  top: 30%;
+  left: 7%;
+  font-size: 30px;
+}
+
+.symbol-two {
+  top: 62%;
+  right: 6%;
+  font-size: 34px;
+  animation-delay: -3s;
+}
+
+.symbol-three {
+  top: 46%;
+  left: 48%;
+  color: #a78bfa;
+  font-size: 22px;
+  animation-delay: -5s;
+}
+
+.symbol-four {
+  bottom: 8%;
+  left: 43%;
+  font-size: 20px;
+  animation-delay: -2s;
+}
+
+/* Animations */
+@keyframes glow-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(45px, -30px, 0) scale(1.12);
+  }
+}
+
+@keyframes particle-float {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-22px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes symbol-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .ambient-glow,
+  .background-particle,
+  .code-symbol {
+    animation: none;
+  }
+}
