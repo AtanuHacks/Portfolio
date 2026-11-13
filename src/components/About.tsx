@@ -60,29 +60,37 @@ export default function About() {
     >
       <div className="mx-auto max-w-7xl">
 
-        {/* SECTION HEADING */}
-        <motion.div
-        className="mb-14 max-w-3xl"
-        variants={headingVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
-        >
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
-            Get to know me
-          </p>
+        
 
-          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            About <span className="text-cyan-400">Me.</span>
-          </h2>
+{/* SECTION HEADING */}
+<motion.div
+  className="mx-auto mb-16 flex max-w-5xl flex-col items-center text-center"
+  variants={headingVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.3 }}
+>
+  <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
+    Get to know me
+  </p>
 
-          <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
-            I'm a third-year Computer Science & Engineering undergraduate
-            driven by curiosity, problem-solving, and continuous growth.
-            I enjoy understanding how things work, tackling challenging
-            problems, and turning ideas into meaningful solutions.
-          </p>
-        </motion.div>
+  <h2 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">
+    About <span className="text-cyan-400">Me.</span>
+  </h2>
+
+  <p className="mt-8 max-w-4xl text-center text-base leading-9 text-slate-300/90 sm:text-lg">
+    I'm a Computer Science and Engineering undergraduate passionate about
+    technology, problem-solving, and building meaningful digital experiences.
+    With an interest in both frontend and backend development, I enjoy
+    exploring different technologies and turning ideas into practical solutions.
+    My curiosity also extends to Machine Learning and Artificial Intelligence,
+    where I explore how data-driven approaches can address real-world challenges.
+    I believe in continuous learning, logical thinking, and pushing beyond my
+    comfort zone to become a better developer every day.
+  </p>
+</motion.div>
+
+
 
         {/* ABOUT CARDS */}
         <motion.div

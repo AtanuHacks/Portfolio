@@ -7,6 +7,7 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
+  { name: "Education", href: "#education" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
@@ -24,8 +25,8 @@ export default function Navbar() {
           href="#home"
           className="text-xl font-bold tracking-wider"
         >
-          <span className="text-white">ATANU</span>
-          <span className="gradient-text"> BOSE.</span>
+          <span className="text-white">My</span>
+          <span className="gradient-text"> Portfolio</span>
         </a>
 
         {/* Desktop navigation */}
