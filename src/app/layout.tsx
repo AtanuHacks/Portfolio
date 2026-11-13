@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import BackgroundEffects from "../components/BackgroundEffects";
+import CursorGlow from "@/components/CursorGlow";
+import ScrollProgress from "@/components/ScrollProgress";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -42,7 +44,9 @@ export default function RootLayout({
     >
       
       <body className="min-h-full flex flex-col">
+        <ScrollProgress />
         <BackgroundEffects/>
+        <CursorGlow />
         <div className="relative z-10 min-h-screen">
           {children}
         </div>

@@ -9,6 +9,7 @@ import {
   Code2,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import About from "@/components/About";
 
 export default function Home() {
   return (
@@ -184,6 +185,7 @@ export default function Home() {
 
         </div>
       </section>
+      <About />
     </main>
   );
 }
