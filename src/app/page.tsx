@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import About from "@/components/About";
+import Education from "@/components/Education";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
@@ -100,10 +102,6 @@ export default function Home() {
                 >
                   <span className="text-sm font-bold">in</span>
                 </a>
-
-              <div className="glass rounded-xl p-3 text-slate-300">
-                <Code2 size={21} />
-              </div>
             </div>
           </motion.div>
 
@@ -139,45 +137,9 @@ export default function Home() {
         {/* Bottom gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/90 via-transparent to-transparent" />
 
-        {/* AI & ML CARD — ABOVE NAME */}
-        <div className="glass absolute bottom-[88px] left-1/2 z-10 -translate-x-1/2 rounded-xl px-4 py-2 text-center whitespace-nowrap">
-          <p className="text-[10px] text-slate-400">03 / INTERESTS</p>
-          <p className="mt-1 text-xs font-semibold text-sky-300">
-            Python · Machine Learning
-          </p>
-        </div>
-
-        {/* Name */}
-        <div className="absolute bottom-7 left-0 right-0 z-10 text-center">
-          <p className="text-2xl font-bold text-white">
-            Atanu Bose
-          </p>
-          <p className="mt-1 text-sm text-cyan-300">
-            Computer Science Undergraduate
-          </p>
-        </div>
-
       </div>
     </div>
 
-    {/* FRONTEND CARD */}
-    <div className="glass absolute -left-8 top-12 z-20  rounded-2xl px-4 py-3">
-      <p className="text-xs text-slate-400">01 / FRONTEND</p>
-      <p className="mt-1 text-sm font-semibold text-cyan-300">
-        Next.js · React
-      </p>
-    </div>
-
-    {/* BACKEND CARD — 3D LAYER BEHIND PHOTO */}
-      <div className="glass absolute -right-19 top-8 z-0
-        rounded-2xl px-5 py-4
-        [transform:rotateY(-8deg)_rotateZ(1deg)_translateZ(-35px)]
-        transition-transform duration-500">
-        <p className="text-xs text-slate-400">02 / BACKEND</p>
-        <p className="mt-1 text-sm font-semibold text-violet-300">
-          Node.js · Express
-        </p>
-      </div>
 
   </div>
 </motion.div>
@@ -186,6 +148,8 @@ export default function Home() {
         </div>
       </section>
       <About />
+      <Education />
+      <Skills />
     </main>
   );
 }

@@ -6,38 +6,40 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function CursorGlow() {
   const [visible, setVisible] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
+  const [isGlassHover, setIsGlassHover] = useState(false);
+
   const mouseX = useMotionValue(-300);
   const mouseY = useMotionValue(-300);
 
   const smoothX = useSpring(mouseX, {
-  stiffness: 300,
-  damping: 35,
-  mass: 0.5,
-});
+    stiffness: 300,
+    damping: 35,
+    mass: 0.5,
+  });
 
-const smoothY = useSpring(mouseY, {
-  stiffness: 300,
-  damping: 35,
-  mass: 0.5,
-});
+  const smoothY = useSpring(mouseY, {
+    stiffness: 300,
+    damping: 35,
+    mass: 0.5,
+  });
 
   useEffect(() => {
     const handleMove = (event: PointerEvent) => {
-    if (event.pointerType !== "mouse") return;
+      if (event.pointerType !== "mouse") return;
 
-    mouseX.set(event.clientX);
-    mouseY.set(event.clientY);
-    setVisible(true);
+      mouseX.set(event.clientX);
+      mouseY.set(event.clientY);
+      setVisible(true);
 
-    const target = event.target;
+      const target = event.target;
 
-    const hovering =
+      const glassHover =
         target instanceof Element &&
-        !!target.closest(".glass, button, a, [data-cursor-glow]");
+        !!target.closest(".glass");
 
-    setIsHovering(hovering);
+      setIsGlassHover(glassHover);
     };
+
     const handleLeave = () => setVisible(false);
 
     window.addEventListener("pointermove", handleMove);
@@ -59,12 +61,12 @@ const smoothY = useSpring(mouseY, {
         x: smoothX,
         y: smoothY,
         background: `radial-gradient(
-            circle,
-            rgba(34,211,238,${isHovering ? 0.16 : 0.10}) 0%,
-            rgba(59,130,246,${isHovering ? 0.10 : 0.06}) 35%,
-            rgba(139,92,246,${isHovering ? 0.08 : 0.045}) 55%,
-            transparent 72%
-            )`,
+          circle,
+          rgba(34,211,238,${isGlassHover ? 0.035 : 0.10}) 0%,
+          rgba(59,130,246,${isGlassHover ? 0.02 : 0.06}) 35%,
+          rgba(139,92,246,${isGlassHover ? 0.015 : 0.045}) 45%,
+          transparent 72%
+        )`,
       }}
     />
   );
