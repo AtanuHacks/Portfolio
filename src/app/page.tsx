@@ -12,6 +12,7 @@ import Navbar from "@/components/Navbar";
 import About from "@/components/About";
 import Education from "@/components/Education";
 import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -150,6 +151,7 @@ export default function Home() {
       <About />
       <Education />
       <Skills />
+      <Projects />
     </main>
   );
 }
